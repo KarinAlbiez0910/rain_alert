@@ -8,6 +8,7 @@ api_key = os.environ.get('OWM_API_KEY')
 phone_number = os.environ.get("TWILIO_PHONE_NUMBER")
 account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
 auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
+my_phone_number = os.environ.get("MY_PHONE_NUMBER")
 
 parameters = {
     'lat': 48.13743,
@@ -34,7 +35,7 @@ if res:
         .create(
         body="Bring an umbrella.",
         from_=phone_number,
-        to='+4917685583232'
+        to=my_phone_number
     )
 
     print(message.status)
